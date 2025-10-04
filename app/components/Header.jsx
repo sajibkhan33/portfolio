@@ -36,8 +36,9 @@ function Header() {
         transition={{ duration: 0.6, delay: 0.7 }}
         className="max-w-2xl mx-auto font-ovo"
       >
-        I am a fresher frontend develomotion.per from Bangladesh, passionate
-        about creating clean and interactive web experiences.
+        I am a Frontend Developer from Bangladesh. As a fresher, I am passionate
+        about building clean, responsive, and interactive web experiences using
+        modern technologies.
       </motion.p>
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <motion.a
