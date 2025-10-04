@@ -56,11 +56,11 @@ export default function NavBar({ isDarkMode, setIsDarkMode }) {
               About me
             </a>
           </li>
-          <li>
+          {/* <li>
             <a className="font-ovo" href="#services">
               Services
             </a>
-          </li>
+          </li> */}
           <li>
             <a className="font-ovo" href="#work">
               My Work
@@ -122,11 +122,11 @@ export default function NavBar({ isDarkMode, setIsDarkMode }) {
               About me
             </a>
           </li>
-          <li>
+          {/* <li>
             <a className="font-ovo" onClick={closeMenu} href="#service">
               Services
             </a>
-          </li>
+          </li> */}
           <li>
             <a className="font-ovo" onClick={closeMenu} href="#work">
               My Work

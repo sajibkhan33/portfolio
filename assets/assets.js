@@ -84,24 +84,28 @@ export const assets = {
 
 export const workData = [
   {
-    title: "Frontend project",
-    description: "Web Design",
-    bgImage: "/work-1.png",
+    title: "Dragon News",
+    description: "Web Development",
+    bgImage: "/dragon-news.png",
+    link: "https://dragon-news-9d66.vercel.app/category/01",
   },
   {
-    title: "Geo based app",
-    description: "Mobile App",
-    bgImage: "/work-2.png",
+    title: "Pro fast courier",
+    description: "Development",
+    bgImage: "/pro-fast-courier.png",
+    link: "https://pro-fast-d8b0e.web.app/",
   },
   {
-    title: "Photography site",
-    description: "Web Design",
-    bgImage: "/work-3.png",
+    title: "Quick Cart",
+    description: "Web Development",
+    bgImage: "/quick-cart.png ",
+    link: "https://quick-cart-liart-iota.vercel.app/",
   },
   {
-    title: "UI/UX designing",
-    description: "UI/UX Design",
-    bgImage: "/work-4.png",
+    title: "Portfolio",
+    description: "Web Development",
+    bgImage: "/portfolio.png",
+    link: "https://example.com/project1",
   },
 ];
 
