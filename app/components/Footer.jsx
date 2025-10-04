@@ -17,7 +17,7 @@ const Footer = ({ isDarkMode }) => {
             alt=""
             className="w-6"
           />
-          nurnavi929@gmail.com
+          sajib3323khan@gmail.com
         </div>
       </div>
       <div className="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
