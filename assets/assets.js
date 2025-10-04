@@ -105,7 +105,7 @@ export const workData = [
     title: "Portfolio",
     description: "Web Development",
     bgImage: "/portfolio.png",
-    link: "https://example.com/project1",
+    link: "https://portfolio-eight-lake-99.vercel.app/",
   },
 ];
 
