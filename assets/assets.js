@@ -91,7 +91,7 @@ export const workData = [
   },
   {
     title: "Pro fast courier",
-    description: "Development",
+    description: "Web Development",
     bgImage: "/pro-fast-courier.png",
     link: "https://pro-fast-d8b0e.web.app/",
   },
