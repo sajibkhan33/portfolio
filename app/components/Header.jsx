@@ -28,7 +28,7 @@ function Header() {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-3xl sm:text-6xl lg:text-[66px] font-ovo"
       >
-        frontend web developer based in Bangladesh.
+        Front-end Web Developer based in Bangladesh
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
@@ -36,9 +36,9 @@ function Header() {
         transition={{ duration: 0.6, delay: 0.7 }}
         className="max-w-2xl mx-auto font-ovo"
       >
-        I am a Frontend Developer from Bangladesh. As a fresher, I am passionate
-        about building clean, responsive, and interactive web experiences using
-        modern technologies.
+        I am a Front-end Developer from Bangladesh, passionate about building
+        clean, responsive, and interactive web experiences using modern
+        technologies
       </motion.p>
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <motion.a

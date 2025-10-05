@@ -54,8 +54,8 @@ const About = ({ isDarkMode }) => {
           className="flex-1"
         >
           <p className="mb-10 max-w-2xl font-ovo">
-            I'm a fresher frontend developer from Bangladesh, passionate about
-            crafting clean, accessible, and interactive web experiences. I work
+            I am a front-end developer from Bangladesh, passionate about
+            building clean, responsive, and interactive web experiences. I work
             with React, Next.js, and Tailwind CSS to build responsive,
             performance-focused interfaces, and I'm eager to contribute to real
             projects while continuously learning and improving my skills.
