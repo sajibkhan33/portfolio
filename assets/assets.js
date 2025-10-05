@@ -87,7 +87,7 @@ export const workData = [
     title: "Dragon News",
     description: "Web Development",
     bgImage: "/dragon-news.png",
-    link: "https://dragon-news-9d66.vercel.app/category/01",
+    link: "https://dragon-news-9d66.vercel.app/",
   },
   {
     title: "Pro fast courier",
