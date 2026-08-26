@@ -3,7 +3,31 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
 
-const About = ({ isDarkMode }) => {
+const About = ({ isDarkMode, skills: dynamicSkills, personalInfo }) => {
+  const dynamicBio = personalInfo?.bio || "I am a MERN stack developer from Bangladesh, passionate about building clean, responsive, and full-stack web applications. I work with MongoDB, Express.js, React, Node.js, Next.js, and Tailwind CSS to construct modern interfaces and robust backend APIs, continuously delivering high-quality web solutions.";
+
+  const dynamicInfoList = [
+    {
+      icon: assets.code_icon,
+      iconDark: assets.code_icon_dark,
+      title: "Languages & Tools",
+      description: dynamicSkills && dynamicSkills.length > 0
+        ? dynamicSkills.map((s) => s.items?.join(", ")).join(" | ")
+        : "JavaScript, React.js, Next.js, Node.js, Express.js, MongoDB, Tailwind CSS",
+    },
+    {
+      icon: assets.edu_icon,
+      iconDark: assets.edu_icon_dark,
+      title: "Education",
+      description: "B.Sc in Computer Science",
+    },
+    {
+      icon: assets.project_icon,
+      iconDark: assets.project_icon_dark,
+      title: "Projects",
+      description: "Built more than 5 projects",
+    },
+  ];
   return (
     <motion.div
       id="about"
@@ -53,12 +77,8 @@ const About = ({ isDarkMode }) => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex-1"
         >
-          <p className="mb-10 max-w-2xl font-ovo">
-            I am a front-end developer from Bangladesh, passionate about
-            building clean, responsive, and interactive web experiences. I work
-            with React, Next.js, and Tailwind CSS to build responsive,
-            performance-focused interfaces, and I'm eager to contribute to real
-            projects while continuously learning and improving my skills.
+          <p className="mb-10 max-w-2xl font-ovo text-gray-700 dark:text-white/80">
+            {dynamicBio}
           </p>
           <motion.ul
             initial={{ opacity: 0 }}
@@ -66,7 +86,7 @@ const About = ({ isDarkMode }) => {
             transition={{ duration: 0.8, delay: 1 }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl"
           >
-            {infoList.map(({ icon, iconDark, title, description }, index) => (
+            {dynamicInfoList.map(({ icon, iconDark, title, description }, index) => (
               <motion.li
                 whileHover={{ scale: 1.05 }}
                 key={index}

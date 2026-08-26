@@ -1,0 +1,75 @@
+{
+  "personalInfo": {
+    "name": "Sajib Khan",
+    "title": "MERN Stack Web Developer",
+    "location": "Bangladesh",
+    "email": "sajib3323khan@gmail.com",
+    "github": "https://github.com/sajibkhan33",
+    "linkedin": "https://www.linkedin.com/in/sajibkhan33",
+    "facebook": "https://www.facebook.com/sajib.khan.noornavi/",
+    "bio": "I am a MERN Stack Developer from Bangladesh, passionate about building scalable, responsive, and full-stack web applications using MongoDB, Express.js, React, Node.js, and Next.js."
+  },
+  "skills": [
+    {
+      "id": "skill-1",
+      "category": "Frontend Development",
+      "items": ["JavaScript (ES6+)", "React.js", "Next.js", "Tailwind CSS", "HTML5", "CSS3"]
+    },
+    {
+      "id": "skill-2",
+      "category": "Backend Development",
+      "items": ["Node.js", "Express.js", "RESTful APIs", "JWT Auth", "Firebase"]
+    },
+    {
+      "id": "skill-3",
+      "category": "Database",
+      "items": ["MongoDB", "Mongoose"]
+    },
+    {
+      "id": "skill-4",
+      "category": "Tools & Workflow",
+      "items": ["Git & GitHub", "VS Code", "Figma", "Vercel", "Postman"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "Dragon News",
+      "description": "Full Stack News Portal",
+      "bgImage": "/dragon-news.png",
+      "tags": ["React", "Node.js", "Tailwind CSS"],
+      "link": "https://dragon-news-9d66.vercel.app/",
+      "githubLink": "https://github.com/sajibkhan33"
+    },
+    {
+      "id": "proj-2",
+      "title": "Pro Fast Courier",
+      "description": "Parcel Delivery Management Web App",
+      "bgImage": "/pro-fast-courier.png",
+      "tags": ["React", "Firebase", "MongoDB"],
+      "link": "https://pro-fast-d8b0e.web.app/",
+      "githubLink": "https://github.com/sajibkhan33"
+    },
+    {
+      "id": "proj-3",
+      "title": "Quick Cart",
+      "description": "E-Commerce Shopping Interface",
+      "bgImage": "/quick-cart.png",
+      "tags": ["Next.js", "React", "Tailwind CSS"],
+      "link": "https://quick-cart-liart-iota.vercel.app/",
+      "githubLink": "https://github.com/sajibkhan33"
+    },
+    {
+      "id": "proj-4",
+      "title": "Portfolio",
+      "description": "Personal Developer Portfolio & CMS",
+      "bgImage": "/portfolio.png",
+      "tags": ["Next.js 15", "Tailwind CSS", "Framer Motion"],
+      "link": "https://portfolio-eight-lake-99.vercel.app/",
+      "githubLink": "https://github.com/sajibkhan33"
+    }
+  ],
+  "security": {
+    "adminPin": "1234"
+  }
+}

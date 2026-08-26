@@ -3,7 +3,9 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
 
-const Work = ({ isDarkMode }) => {
+const Work = ({ isDarkMode, projects: dynamicProjects }) => {
+  const displayProjects = dynamicProjects && dynamicProjects.length > 0 ? dynamicProjects : workData;
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -35,7 +37,7 @@ const Work = ({ isDarkMode }) => {
         className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo"
       >
         Welcome to my web development portfolio! Explore a collection of
-        projects showcasing my expertise in front-end development.
+        projects showcasing my expertise in MERN stack development.
       </motion.p>
       <motion.div
         initial={{ opacity: 0 }}
@@ -43,7 +45,7 @@ const Work = ({ isDarkMode }) => {
         transition={{ delay: 0.9, duration: 0.6 }}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-10 dark:text-black"
       >
-        {workData.map((project, index) => (
+        {displayProjects.map((project, index) => (
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
@@ -53,11 +55,28 @@ const Work = ({ isDarkMode }) => {
           >
             <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 px-5 py-3 flex items-center justify-between duration-500 group-hover:bottom-7">
               <div>
-                <h2 className="font-semibold">{project.title}</h2>
-                <p className="text-sm text-gray-700">{project.description}</p>
+                <h2 className="font-semibold text-gray-900">{project.title}</h2>
+                <p className="text-xs text-gray-600 mb-1">{project.description}</p>
+                {project.tags && (
+                  <div className="flex flex-wrap gap-1">
+                    {project.tags.map((tag, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="text-[10px] bg-purple-100 text-purple-800 font-medium px-1.5 py-0.5 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
               <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0 #000] group-hover:bg-lime-300 transition">
-                <a href={project.link} target="_blank">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${project.title} project`}
+                >
                   <Image
                     src={assets.send_icon}
                     alt="send icon"
@@ -73,7 +92,9 @@ const Work = ({ isDarkMode }) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 1.1, duration: 0.5 }}
-        href=""
+        href="https://github.com/sajibkhan33?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
         className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-purple-50 duration-500 dark:text-white dark:border-white dark:hover:bg-purple-400"
       >
         Show more

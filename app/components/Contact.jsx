@@ -5,27 +5,40 @@ import { motion } from "motion/react";
 
 const Contact = ({ isDarkMode }) => {
   const [result, setResult] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    setIsSubmitting(true);
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "43b1147d-fb5b-4c87-b123-9252c24af3b6");
+    formData.append(
+      "access_key",
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+        "43b1147d-fb5b-4c87-b123-9252c24af3b6"
+    );
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+      if (data.success) {
+        setResult("Form Submitted Successfully!");
+        event.target.reset();
+      } else {
+        console.log("Error", data);
+        setResult(data.message || "Failed to send message.");
+      }
+    } catch (error) {
+      console.error(error);
+      setResult("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
   return (
@@ -34,7 +47,7 @@ const Contact = ({ isDarkMode }) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="contact"
-      className="w-full px-[12%] py-10 scroll-mt-20 bg-[url('/footer-bg-color.png bg-no-repeat bg-center bg-[length:90%_auto]')] dark:bg-none"
+      className="w-full px-[12%] py-10 scroll-mt-20 bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto] dark:bg-none"
     >
       <motion.h4
         initial={{ y: -20, opacity: 0 }}
@@ -96,20 +109,21 @@ const Contact = ({ isDarkMode }) => {
           transition={{ delay: 1.3, duration: 0.6 }}
           rows="6"
           name="message"
-          placeholder="eneter your message"
+          placeholder="enter your message"
           required
           className="w-full  p-4  outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-black/30 dark:border/90"
         ></motion.textarea>
         <motion.button
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
           transition={{ duration: 0.3 }}
           type="submit"
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black text-white rounded-full mx-auto hover:bg-[#2a004a] duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-purple-400"
+          disabled={isSubmitting}
+          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black text-white rounded-full mx-auto hover:bg-[#2a004a] duration-500 disabled:opacity-50 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-purple-400"
         >
-          Submit now{" "}
+          {isSubmitting ? "Submitting..." : "Submit now"}{" "}
           <Image src={assets.right_arrow_white} alt="" className="w-4" />
         </motion.button>
-        <p className="mt-4">{result}</p>
+        <p className="mt-4 text-center font-ovo">{result}</p>
       </motion.form>
     </motion.div>
   );

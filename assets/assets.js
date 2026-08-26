@@ -86,24 +86,28 @@ export const workData = [
   {
     title: "Dragon News",
     description: "Web Development",
+    tags: ["React", "Node.js", "Tailwind CSS"],
     bgImage: "/dragon-news.png",
     link: "https://dragon-news-9d66.vercel.app/",
   },
   {
     title: "Pro fast courier",
     description: "Web Development",
+    tags: ["React", "Firebase", "MongoDB"],
     bgImage: "/pro-fast-courier.png",
     link: "https://pro-fast-d8b0e.web.app/",
   },
   {
     title: "Quick Cart",
     description: "Web Development",
+    tags: ["Next.js", "React", "Tailwind CSS"],
     bgImage: "/quick-cart.png ",
     link: "https://quick-cart-liart-iota.vercel.app/",
   },
   {
     title: "Portfolio",
     description: "Web Development",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
     bgImage: "/portfolio.png",
     link: "https://portfolio-eight-lake-99.vercel.app/",
   },
@@ -142,8 +146,8 @@ export const infoList = [
   {
     icon: assets.code_icon,
     iconDark: assets.code_icon_dark,
-    title: "Languages",
-    description: "HTML, CSS, Tailwind CSS,JavaScript React Js, Next Js",
+    title: "Languages & Tools",
+    description: "JavaScript, React.js, Next.js, Node.js, Express.js, MongoDB, Tailwind CSS",
   },
   {
     icon: assets.edu_icon,
